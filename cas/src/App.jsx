@@ -230,7 +230,7 @@ function App() {
 
         {/* Footer */}
         <footer className="text-center text-gray-500 mt-8 pb-4">
-          <p>© 2026 Manage Your Money </p>
+          <p>© 2026 Manage Your Moneyyyyyyyyyyyyyyyy </p>
         </footer>
 
       </div>
