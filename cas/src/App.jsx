@@ -8,15 +8,15 @@ function App() {
   const [category, setCategory] = useState('Food')
   const [filter, setFilter] = useState('All')
 
- 
+  // Calculate total
   const total = expenses.reduce((sum, item) => sum + item.amount, 0)
 
-  
+  // Filter expenses
   const filteredExpenses = expenses.filter((item) => {
     return filter === 'All' || item.category === filter
   })
 
- 
+  // Add expense
   const addExpense = (e) => {
     e.preventDefault()
 
@@ -38,6 +38,7 @@ function App() {
     setCategory('Food')
   }
 
+  // Delete expense
   const deleteExpense = (id) => {
     setExpenses(expenses.filter((item) => item.id !== id))
   }
@@ -47,15 +48,17 @@ function App() {
 
       <div className="max-w-4xl mx-auto">
 
+        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-700 mb-3">
             Expense Tracker
           </h1>
           <p className="text-gray-600 text-lg">
-            Manage your money 
+            Manage your money and track your spending.
           </p>
         </div>
 
+        {/* Total Expenses */}
         <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-2xl shadow-xl mb-8 text-center">
           <h2 className="text-xl font-semibold mb-3">
             Total Expenses
@@ -66,7 +69,7 @@ function App() {
           </p>
 
           <p className="text-blue-100 mt-3">
-            {expenses.length} 
+            {expenses.length} expenses recorded
           </p>
         </div>
 
@@ -128,7 +131,7 @@ function App() {
 
             <button
               type="submit"
-              className="w-full bg-white-600 text-white font-bold p-4 rounded-xl hover:bg-blue-800 hover:shadow-lg active:scale-95 transition duration-300"
+              className="w-full bg-blue-600 text-white font-bold p-4 rounded-xl hover:bg-blue-800 hover:shadow-lg active:scale-95 transition duration-300"
             >
               + Add Expense
             </button>
@@ -157,6 +160,8 @@ function App() {
           </select>
 
         </div>
+
+        {/* Expense List */}
         <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
 
           <div className="flex justify-between items-center mb-6">
@@ -164,7 +169,7 @@ function App() {
               Expense History
             </h2>
 
-            <span className="bg-orange-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold">
+            <span className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold">
               {filteredExpenses.length} items
             </span>
           </div>
@@ -223,9 +228,9 @@ function App() {
 
         </div>
 
-        
+        {/* Footer */}
         <footer className="text-center text-gray-500 mt-8 pb-4">
-          <p> Manage Your Money </p>
+          <p>© 2026 Manage Your Money </p>
         </footer>
 
       </div>
